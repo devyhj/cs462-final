@@ -10,14 +10,18 @@ class IncidentFound extends Event
 {
     use SerializesModels;
 
+    public $user;
+    public $message;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user, $message)//User data as parameter?
     {
-        //
+        $this->user = $user;
+        $this->message = $message;
     }
 
     /**

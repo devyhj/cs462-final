@@ -5,6 +5,7 @@ namespace App\Listeners;
 use App\Events\IncidentFound;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Twilio;
 
 class AlertClient
 {
@@ -26,6 +27,6 @@ class AlertClient
      */
     public function handle(IncidentFound $event)
     {
-        //
+        Twilio::message($event->user->phone, $event->message);
     }
 }
