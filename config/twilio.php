@@ -12,7 +12,7 @@ return [
                 | Your Twilio Account SID #
                 |
                 */
-                'sid' => getenv('TWILIO_SID') ?: 'AC5bcc38dd8abf71d705d6753d57a4c3b4',
+                'sid' => getenv('TWILIO_SID') ?: '',
                 /*
                 |--------------------------------------------------------------------------
                 | Access Token
@@ -21,7 +21,7 @@ return [
                 | Access token that can be found in your Twilio dashboard
                 |
                 */
-                'token' => getenv('TWILIO_TOKEN') ?: '15e87a1bda86c89be07ede5d2f77418f',
+                'token' => getenv('TWILIO_TOKEN') ?: '',
                 /*
                 |--------------------------------------------------------------------------
                 | From Number
@@ -30,7 +30,7 @@ return [
                 | The Phone number registered with Twilio that your SMS & Calls will come from
                 |
                 */
-                'from' => getenv('TWILIO_FROM') ?: '+14694163451',
+                'from' => getenv('TWILIO_FROM') ?: '',
                 /*
                 |--------------------------------------------------------------------------
                 | Verify Twilio's SSL Certificates
