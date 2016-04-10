@@ -23,4 +23,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function Locations()
+    {
+        return $this->belongsToMany('App\Location', 'user_location');
+    }
+
 }
