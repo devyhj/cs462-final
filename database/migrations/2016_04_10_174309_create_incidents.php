@@ -16,7 +16,7 @@ class CreateIncidents extends Migration
             $table->engine='InnoDB';
             $table->increments('id');
             $table->string('location_id');
-            $table->string('external_id');
+            $table->string('external_id')->unique();
             $table->timestamps();
         });
     }
