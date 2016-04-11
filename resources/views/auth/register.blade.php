@@ -38,11 +38,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Phone Number (without dashs)</label>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="phone_number">
+                                <input type="text" class="form-control" name="phone_number">
 
                                 @if ($errors->has('phone_number'))
                                     <span class="help-block">
