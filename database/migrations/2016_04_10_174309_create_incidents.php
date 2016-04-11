@@ -15,7 +15,8 @@ class CreateIncidents extends Migration
         Schema::create('incidents', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
-            $table->string('location_id');
+            $table->string('location');
+            $table->string('description');
             $table->string('external_id')->unique();
             $table->timestamps();
         });

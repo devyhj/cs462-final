@@ -24,9 +24,5 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function Locations()
-    {
-        return $this->belongsToMany('App\Location', 'user_location');
-    }
 
 }

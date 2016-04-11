@@ -10,18 +10,21 @@ class IncidentFound extends Event
 {
     use SerializesModels;
 
-    public $user;
-    public $message;
+    public $incidents = array();
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($user, $message)//User data as parameter?
+    public function __construct($incidents)//User data as parameter?
     {
-        $this->user = $user;
-        $this->message = $message;
+        $this->incidents = $incidents;
+    }
+
+    public function getIncidents()
+    {
+        return $this->incidents;
     }
 
     /**

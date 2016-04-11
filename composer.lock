@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "79b0975360f5a8eb0733c0c9a27894b8",
-    "content-hash": "d7324ef98484f966657db3e3af2c3af7",
+    "hash": "c269ccc290b9e4628cc5c5e1d6ccf423",
+    "content-hash": "1b27333f3ee42d8645f6b71d76e6f4b3",
     "packages": [
         {
             "name": "aloha/twilio",
@@ -60,6 +60,45 @@
                 "twilio"
             ],
             "time": "2015-07-17 16:39:36"
+        },
+        {
+            "name": "anlutro/curl",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anlutro/php-curl.git",
+                "reference": "482c85b3e1635146ae967340b17a22b10c1aae80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anlutro/php-curl/zipball/482c85b3e1635146ae967340b17a22b10c1aae80",
+                "reference": "482c85b3e1635146ae967340b17a22b10c1aae80",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "anlutro\\cURL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Lutro",
+                    "email": "anlutro@gmail.com"
+                }
+            ],
+            "description": "Simple OOP cURL wrapper.",
+            "time": "2016-03-23 16:09:50"
         },
         {
             "name": "classpreloader/classpreloader",

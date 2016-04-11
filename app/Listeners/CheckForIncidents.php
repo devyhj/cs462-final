@@ -17,7 +17,7 @@ class CheckForIncidents implements ShouldQueue
     //private $google = new \Geocoder\Provider\GoogleMaps($curl);
     private $bingKey = Config::get('geocoder.bing.key');
     private $bing; 
-    private $bingURL = "http://dev.virtualearth.net/REST/v1/Traffic/Incidents/" // + S,W,N,E?key=APIKey
+    private $bingURL = "http://dev.virtualearth.net/REST/v1/Traffic/Incidents/37.04,-115.46,42.35,-108.17" // + S,W,N,E?key=APIKey
     private $dumper = new \Geocoder\Dumper\GeoJson();
 
     public function __construct()
@@ -34,7 +34,7 @@ class CheckForIncidents implements ShouldQueue
    private function checkArea($client)
    {
         $box = $this->geocoder->geocode($client->address)->getBounds();
-        $report = json_decode($curl->get("{$bingURL}{$box->south - 0.007},{$box->west - 0.007},{$box->north + 0.007},{$box->east + 0.007},?key={$this->bingKey}"), true);
+        $report = json_decode($curl->get("{$bingURL},?key={$this->bingKey}"), true);
         if  ((int) $report->resourceSets->estimatedTotal  >= 0 ) {
             foreach ($report->resourceSets as $resources){
                 foreach ($resources->resources as $accident){

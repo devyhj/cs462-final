@@ -1,35 +1,43 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Console\Commands;
 
+use Illuminate\Console\Command;
 use Event;
 use App\Events\IncidentFound;
-use App\Http\Requests;
-use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class CheckIncidents extends Command
 {
     /**
-     * Create a new controller instance.
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'incident:check';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Checking incidents';
+
+    /**
+     * Create a new command instance.
      *
      * @return void
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        parent::__construct();
     }
 
     /**
-     * Show the application dashboard.
+     * Execute the console command.
      *
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
-    public function index()
-    {
-        return view('home');
-    }
-
-    public function test()
+    public function handle()
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "http://dev.virtualearth.net/REST/v1/Traffic/Incidents/37.04,-115.46,42.35,-108.17?key=AunSppuTRCtKNtZ6Tw-ojcFtxuOCs7rjQDTP1X38e0RoIK-nUDzTd24bcAZUymg-"); 
@@ -39,4 +47,5 @@ class HomeController extends Controller
         $incidents = $result->resourceSets[0]->resources;
         Event::fire(new IncidentFound($incidents));
     }
+    
 }
