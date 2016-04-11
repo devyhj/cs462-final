@@ -66,7 +66,7 @@ class AlertClient
 
                 $message = '';
 
-                $message = 'Location: '.$address.' Description: '.$description;
+                $message = 'Location: '.$address.' / Description: '.$description;
                 foreach($users as $user){
                     // If you're getting SSL cert errors, add `CURLOPT_SSL_VERIFYPEER => FALSE,` after line 59 in --> vendor/twilio/sdk/services/twilio/TinyHttp.php
                     Twilio::message($user->phone_number, $message);
