@@ -39,7 +39,7 @@ class CheckIncidents extends Command
      */
     public function handle()
     {
-        $bingKey = Config::get('geocoder.bing.key');
+        $bingKey = 'AunSppuTRCtKNtZ6Tw-ojcFtxuOCs7rjQDTP1X38e0RoIK-nUDzTd24bcAZUymg-';
         $bingURL = "http://dev.virtualearth.net/REST/v1/Traffic/Incidents/37.04,-115.46,42.35,-108.17"; // + S,W,N,E?key=APIKey
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $bingURL."?key=".$bingKey); 

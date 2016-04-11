@@ -34,7 +34,7 @@ class AlertClient
         {
             // dd($incident);
             $points = $incident->point->coordinates;
-            $googleKey = Config::get('geocoder.bing.key');
+            $googleKey = 'AIzaSyBY8R1d3q5xNLyJo63MGr_SINqHD7Ulgco';
             $url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='.$points[0].','.$points[1]."&key=".$googleKey;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url); 
