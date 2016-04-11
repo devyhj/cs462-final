@@ -207,7 +207,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'cURL' => 'anlutro\cURL\Laravel\cURL',
-
+        'Twilio' => 'Aloha\Twilio\Support\Laravel\Facade',
     ],
 
 ];
