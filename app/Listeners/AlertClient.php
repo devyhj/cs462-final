@@ -63,9 +63,13 @@ class AlertClient
                 $newIncident->external_id=$external_id;
                 $newIncident->save();
                 $users = DB::select('select * from users');
+
+                $message = '';
+
+                $message = 'Location: '.$address.' Description: '.$description;
                 foreach($users as $user){
                     // If you're getting SSL cert errors, add `CURLOPT_SSL_VERIFYPEER => FALSE,` after line 59 in --> vendor/twilio/sdk/services/twilio/TinyHttp.php
-                    Twilio::message($user->phone_number, $description);
+                    Twilio::message($user->phone_number, $message);
                 }
             }
         }
