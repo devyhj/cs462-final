@@ -13,9 +13,6 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\TimerExpired' => [
-            'App\Listeners\CheckForIncidents',
-        ],
         'App\Events\IncidentFound' => [
             'App\Listeners\AlertClient'
         ],
